@@ -31,19 +31,19 @@ This script generates SVG icons for file extensions using customizable templates
 python3 generate_icons.py
 
 # Generate icons with a specific template.
-python3 generate_icons.py --template templates/template_other.svg
+python3 generate_icons.py -t templates/template_other.svg
 
 # Generate icons with a custom JSON file. 
-python3 generate_icons.py custom_extensions.json
+python3 generate_icons.py -j custom_extensions.json
 
 # Generate icons in a specific output directory
-python3 generate_icons.py --output-dir /path/to/directory
+python3 generate_icons.py -o /path/to/directory
 
 # Check for duplicates in aliases and extensions
-python3 generate_icons.py --check
+python3 generate_icons.py -c
 
 # Overwrite existing files
-python3 generate_icons.py --force
+python3 generate_icons.py -f
 ```
 
 ## Summary
@@ -70,42 +70,46 @@ This will use the default `extensions.json` file and generate icons for all temp
 
 ### Generate icons with a specific template
 
-To generate icons with only a specific template, use the `--template` option:
+To generate icons with only a specific template, use the `-t` or `--template` option:
 
 ```bash
-python3 generate_icons.py --template templates/template_solid.svg
+python3 generate_icons.py -t templates/template_solid.svg
 ```
+
+By default, the icons will be saved in the `icons/` directory with a subdirectory corresponding to the template name. For example, if you use the `template_solid.svg` template, the icons will be saved in the `icons/solid/` directory.
 
 ### Generate icons with a custom JSON file
 
-To use a custom JSON file, specify the path to the file:
+To use a custom JSON file, specify the path to the file using the `-j` or `--json` option:
 
 ```bash
-python3 generate_icons.py my_file.json
+python3 generate_icons.py -j my_file.json
 ```
 
 ### Generate icons in a specific output directory
 
-To specify a different output directory, use the `--output-dir` option:
+To specify a different output directory, use the `-o` or `--output-dir` option:
 
 ```bash
-python3 generate_icons.py --output-dir /path/to/directory
+python3 generate_icons.py -o /path/to/directory
 ```
+
+This will override the default directory structure and save the icons in the specified directory.
 
 ### Check for duplicates in aliases and extensions
 
-To check for duplicates in aliases and extensions, use the `--check` option:
+To check for duplicates in aliases and extensions, use the `-c` or `--check` option:
 
 ```bash
-python3 generate_icons.py --check
+python3 generate_icons.py -c
 ```
 
 ### Overwrite existing files
 
-To overwrite existing files, use the `--force` option:
+To overwrite existing files, use the `-f` or `--force` option:
 
 ```bash
-python3 generate_icons.py --force
+python3 generate_icons.py -f
 ```
 
 ## JSON File

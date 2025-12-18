@@ -109,7 +109,7 @@ def generate_icon(extension, color, output_dir, template_svg, font_size=None, fo
     print(f"Icon generated: {filename}")
 
 
-def generate_icons_from_json(json_file, output_dir, template_file="template_solid.svg", force=False):
+def generate_icons_from_json(json_file, output_dir, template_file="template_solid.svg", force=False, use_default_dir=True):
     """
     Generate icons from a JSON file containing extension/color pairs.
     
@@ -118,6 +118,7 @@ def generate_icons_from_json(json_file, output_dir, template_file="template_soli
         output_dir (str): The output directory for the icons.
         template_file (str): The SVG template file to use.
         force (bool, optional): If True, overwrite existing files.
+        use_default_dir (bool, optional): If True, use the default directory structure.
     """
     # Load the SVG template
     template_svg = load_template(template_file)
@@ -125,6 +126,11 @@ def generate_icons_from_json(json_file, output_dir, template_file="template_soli
     # Read the JSON file
     with open(json_file, "r") as f:
         data = json.load(f)
+    
+    # Determine the output directory
+    if use_default_dir:
+        template_name = os.path.basename(template_file).replace("template_", "").replace(".svg", "")
+        output_dir = os.path.join("icons", template_name)
     
     # Ensure the output directory exists
     if not os.path.exists(output_dir):
@@ -147,7 +153,7 @@ def generate_icons_from_json(json_file, output_dir, template_file="template_soli
                 generate_icon(alias, color, output_dir, template_svg, font_size, force)
 
 
-def check_aliases(json_file="extensions.json"):
+def check_aliases(json_file="./json/default.json"):
     """
     Check for duplicates in aliases and extensions.
     
@@ -183,10 +189,6 @@ def check_aliases(json_file="extensions.json"):
     # Check main extensions that are also aliases
     extensions_in_aliases = main_extensions.intersection(all_aliases)
     
-    print("\n📋 List of aliases:")
-    for alias, extension in aliases_map.items():
-        print(f"  - {alias} → {extension}")
-    
     print(f"\n✅ Total: {len(main_extensions)} extensions and {len(all_aliases)} aliases.")
     
     # Ask the user if they want to remove main extensions that are also aliases
@@ -210,7 +212,7 @@ def check_aliases(json_file="extensions.json"):
         print("\n✅ No main extensions that are also aliases found.")
 
 
-def generate_all_templates(json_file="extensions.json", templates_dir="templates", force=False):
+def generate_all_templates(json_file="./json/default.json", templates_dir="templates", force=False):
     """
     Generate icons for all templates in the templates directory.
     
@@ -247,11 +249,11 @@ def main():
     """
     # Configure the argument parser
     parser = argparse.ArgumentParser(description="Generate icons for file extensions.")
-    parser.add_argument("json_file", nargs="?", default="extensions.json", help="Path to the JSON file containing extension/color pairs (default: extensions.json).")
-    parser.add_argument("--output-dir", default=".", help="Output directory for the icons (default: current directory).")
-    parser.add_argument("--template", default=None, help="SVG template file to use. If not specified, all templates in the templates directory will be used.")
-    parser.add_argument("--force", action="store_true", help="Overwrite existing files.")
-    parser.add_argument("--check", action="store_true", help="Check for duplicates in aliases and extensions.")
+    parser.add_argument("-j", "--json", dest="json_file", default="extensions.json", help="Path to the JSON file containing extension/color pairs (default: extensions.json).")
+    parser.add_argument("-o", "--output-dir", default=None, help="Output directory for the icons. If not specified, icons will be saved in the icons/ directory with subdirectories corresponding to each template.")
+    parser.add_argument("-t", "--template", default=None, help="SVG template file to use. If not specified, all templates in the templates directory will be used.")
+    parser.add_argument("-f", "--force", action="store_true", help="Overwrite existing files.")
+    parser.add_argument("-c", "--check", action="store_true", help="Check for duplicates in aliases and extensions.")
     
     args = parser.parse_args()
     
@@ -261,7 +263,8 @@ def main():
     else:
         # If a template is specified, generate icons with that template
         if args.template:
-            generate_icons_from_json(args.json_file, args.output_dir, args.template, args.force)
+            use_default_dir = args.output_dir is None
+            generate_icons_from_json(args.json_file, args.output_dir, args.template, args.force, use_default_dir)
         else:
             # Otherwise, generate icons for all templates in the templates directory
             generate_all_templates(args.json_file, force=args.force)
