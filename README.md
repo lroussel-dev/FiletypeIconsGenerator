@@ -10,6 +10,8 @@ This script generates SVG icons for file extensions using customizable templates
  
 > ⚠️ Hi there ! This code was generated with the help of the `Mistral Vibe CLI`. Even if I had fully reviewed and tested the code, tell me if you see anything wrong ! 
 
+## Examples [here](https://lroussel-dev.github.io/FiletypeIconsGenerator/)
+
 ## Features
 
 - **🤖 Automatic Generation**: Generate file extension icons from a JSON configuration file
@@ -56,6 +58,8 @@ python generate_icons.py -c
 
 # Overwrite existing files
 python generate_icons.py -f
+
+python generate_icons.py -t templates/template_solid_rounded.svg -j json/commons.json -o docs/images
 ```
 
 
