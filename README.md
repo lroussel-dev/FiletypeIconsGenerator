@@ -11,7 +11,7 @@ sometimes you need a particular extension never used by everybody, you don't lik
 
 So I decided to make a simple generator from SVG template. Everybody can make any extension with any color from any SVG file.
 
-> ⚠️ The code was mainly generated with the help of the `Mistral Vibe CLI`. Even if I had fully reviewed and tested the code, tell me if you see anything wrong ! 
+> ⚠️ The code was mainly generated with the help of the `Mistral Vibe CLI`. Even if I had fully reviewed and tested the code, tell me if you see anything wrong ! ⚠️ 
 
 ## Examples [here](https://lroussel-dev.github.io/FiletypeIconsGenerator/)
 
@@ -61,8 +61,6 @@ python generate_icons.py -c
 
 # Overwrite existing files
 python generate_icons.py -f
-
-python generate_icons.py -t templates/template_solid_rounded.svg -j json/commons.json -o docs/images
 ```
 
 
