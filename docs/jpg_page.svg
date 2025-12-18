@@ -1,0 +1,13 @@
+<svg width="48px" height="48px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <path d="M4,40L4,0L27.272,0L36.059,8.787L36,40L4,40Z" style="fill:rgb(235,235,235);"/>
+    <path d="M4,40L4,0L27.272,0L36.059,8.787L36,40L4,40ZM5,39L35.002,39L35.058,9.2L26.858,1L5,1L5,39Z"/>
+    <g transform="matrix(1,0,0,1.719981,0,-28.799238)">
+        <rect x="4" y="31.733" width="32.059" height="8.267" style="fill:#7B1FA2;"/>
+        <path d="M36.059,31.733L36.059,40L4,40L4,31.733L36.059,31.733ZM35.059,32.315L5,32.315L5,39.419L35.059,39.419L35.059,32.315Z"/>
+    </g>
+    <g transform="matrix(1,0,0,1,-8.136884,6.436365)">
+        <g transform="matrix(12,0,0,12,40.007959,30.709114)">
+        </g>
+        <text x="28px" y="27px" text-anchor="middle" dominant-baseline="middle" style="font-family:'Arial-BoldMT', 'Arial', sans-serif;font-weight:700;font-size:10;fill:rgb(235,235,235);">JPG</text>
+    </g>
+</svg>
