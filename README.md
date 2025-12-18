@@ -1,6 +1,6 @@
 # File Icon Generator
 
-<span align="center">
+<span text-align="center">
 <img src="./docs/jpg_page.svg">
 <img src="./docs/jpg_solid_rounded.svg">
 <img src="./docs/jpg_solid_squared.svg">
@@ -8,52 +8,55 @@
 
 This script generates SVG icons for file extensions using customizable templates. The icons are generated with colors and font sizes adapted to the length of the extension.
  
-> ⚠️ Hi there ! This code was generated with the help of the `Mistral Vibe CLI`. Even if I reviewed and test the code, tell me if you see anything wrong !
+> ⚠️ Hi there ! This code was generated with the help of the `Mistral Vibe CLI`. Even if I had fully reviewed and tested the code, tell me if you see anything wrong ! 
 
 ## Features
 
-- **Automatic Generation**: Generate icons for file extensions from a JSON file.
-- **Customizable Templates**: Use SVG as templates to decline icons with different styles.
-- **Aliases**: Support for aliases for extensions (e.g., DOC and DOCX).
-- **Dynamic Font Size**: Automatically adjust the font size based on the length of the extension.
-- **Customization**: Allow specifying a custom font size for each extension.
-
-## TO-DO (Not sorted)
-- [ ] **More font placeholder** : font-family and font color
-- [ ] Change all **default settings** (default font, size, etc.)
-- [ ] More **basic templates**
-- [ ] **Convert SVG to PNG** (with custom size)
-
-## Commands Examples
-
-```bash
-# Generate icons for all templates
-python3 generate_icons.py
-
-# Generate icons with a specific template.
-python3 generate_icons.py -t templates/template_other.svg
-
-# Generate icons with a custom JSON file. 
-python3 generate_icons.py -j custom_extensions.json
-
-# Generate icons in a specific output directory
-python3 generate_icons.py -o /path/to/directory
-
-# Check for duplicates in aliases and extensions
-python3 generate_icons.py -c
-
-# Overwrite existing files
-python3 generate_icons.py -f
-```
+- **🤖 Automatic Generation**: Generate file extension icons from a JSON configuration file
+- **🎨 Customizable Templates**: Use SVG templates to style icons with different visual themes
+- **🔄 Alias Support**: Handle file extension aliases *(e.g., DOC and DOCX)*
+- **📏 Dynamic Font Sizing**: Automatically adjust text size based on extension length
+- **⚙️ Advanced Customization**: Specify custom font sizes for individual extensions *(and more in the future !)*
 
 ## Summary
-1. [Installation](#installation)
+1. [TO-DO](#to-do)
+1. [Quick Start](#quick-start)
 1. [How to use](#how-to-use)
 1. [JSON](#json-file)
 1. [Templates](#templates)
 1. [Font Size](#font-size)
 1. [Contribution](#contribution)
 1. [License](./LICENSE)
+
+## TO-DO
+This list is not sorted by priority. It's just a memo for myself !
+- [ ] **More font placeholder** : font-family and font color
+- [ ] Change all **default settings** (default font, size, etc.)
+- [ ] More **basic templates**
+- [ ] **Convert SVG to PNG** (with custom size)
+- [ ] Generate only **one icon**
+
+## Quick Start
+
+```bash
+# Generate icons for all templates
+python generate_icons.py
+
+# Generate icons with a specific template.
+python generate_icons.py -t templates/template_other.svg
+
+# Generate icons with a custom JSON file. 
+python generate_icons.py -j custom_extensions.json
+
+# Generate icons in a specific output directory
+python generate_icons.py -o /path/to/directory
+
+# Check for duplicates in aliases and extensions
+python generate_icons.py -c
+
+# Overwrite existing files
+python generate_icons.py -f
+```
 
 
 ## How to use

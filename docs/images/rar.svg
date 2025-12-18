@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <path d="M36.059,12.739L36.059,34.996C36.059,37.758 33.816,40 31.055,40L9.004,40C6.242,40 4,37.758 4,34.996L4,5.004C4,2.242 6.242,0 9.004,0L23.32,0L36.059,12.739Z" fill="#419b39ff"/>
+    <text text-anchor="middle" x="20" y="33" font-family="Arial-BoldMT, Arial, sans-serif" font-weight="700" font-size="10" fill="#ebebeb">RAR</text>
+    <path d="M36.059,15.059L24.765,15.059C22.687,15.059 21,13.372 21,11.294L21,0L36.059,15.059Z" fill="#ebebeb" fill-opacity="0.45" transform="translate(5.555,0) scale(0.845935)"/>
+</svg>
