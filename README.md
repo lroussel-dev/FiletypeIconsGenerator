@@ -6,9 +6,12 @@
 <img src="./docs/jpg_solid_squared.svg">
 </span>
 
-This script generates SVG icons for file extensions using customizable templates. The icons are generated with colors and font sizes adapted to the length of the extension.
- 
-> ⚠️ Hi there ! This code was generated with the help of the `Mistral Vibe CLI`. Even if I had fully reviewed and tested the code, tell me if you see anything wrong ! 
+**Searching huge icons pack can be exhausting**. Sometimes you don't have the money to pay designers, 
+sometimes you need a particular extension never used by everybody, you don't like the color of one of the icon, etc.
+
+So I decided to make a simple generator from SVG template. Everybody can make any extension with any color from any SVG file.
+
+> ⚠️ The code was mainly generated with the help of the `Mistral Vibe CLI`. Even if I had fully reviewed and tested the code, tell me if you see anything wrong ! 
 
 ## Examples [here](https://lroussel-dev.github.io/FiletypeIconsGenerator/)
 
@@ -228,3 +231,7 @@ Feel free to pull request !
 ## License
 
 This project is licensed under the GNU GPLv3 License. See [LICENSE](./LICENSE) to review the full text.
+
+## README.md
+
+Write by love by human, with the correction of a robot ❤️
